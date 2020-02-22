@@ -382,6 +382,9 @@ export default class Gradebook extends React.Component {
         Email: (
           <span className="wrap-text-in-cell">{entry.email}</span>
         ),
+        Name: (
+          <span className="wrap-text-in-cell">{entry.name}</span>
+        ),
       };
 
       const assignments = entry.section_breakdown
