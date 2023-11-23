@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import {
   Button,
-  Modal,
+  ModalDialog,
   Alert,
 } from '@edx/paragon';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
@@ -46,7 +46,7 @@ export class EditModal extends React.Component {
 
   render() {
     return (
-      <Modal
+      <ModalDialog
         open={this.props.open}
         title={<FormattedMessage {...messages.title} />}
         closeText={<FormattedMessage {...messages.closeText} />}
