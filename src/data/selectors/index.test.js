@@ -1,3 +1,4 @@
+/* eslint-disable no-import-assign */
 /* eslint-disable import/no-named-as-default-member, import/no-named-as-default */
 import * as filterConstants from '../constants/filters';
 import selectors from '.';

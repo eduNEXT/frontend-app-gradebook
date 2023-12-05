@@ -34,7 +34,6 @@ exports[`AssignmentGradeFilter Component snapshots buttons and groups disabled i
     className="grade-filter-action"
   >
     <ForwardRef
-      active={false}
       disabled={true}
       name="assignmentGradeMinMax"
       onClick={[MockFunction handleSubmit]}
@@ -81,7 +80,6 @@ exports[`AssignmentGradeFilter Component snapshots smoke test 1`] = `
     className="grade-filter-action"
   >
     <ForwardRef
-      active={false}
       disabled={false}
       name="assignmentGradeMinMax"
       onClick={[MockFunction handleSubmit]}
