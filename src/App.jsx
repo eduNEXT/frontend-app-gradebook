@@ -20,7 +20,7 @@ const App = () => (
           <Switch>
             <Route
               exact
-              path=/gradebook/:courseId
+              path="/gradebook/:courseId"
               component={GradebookPage}
             />
           </Switch>
