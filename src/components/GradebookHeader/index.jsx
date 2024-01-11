@@ -18,6 +18,11 @@ export class GradebookHeader extends React.Component {
     this.handleToggleViewClick = this.handleToggleViewClick.bind(this);
   }
 
+  handleToggleViewClick() {
+    const newView = this.props.activeView === views.grades ? views.bulkManagementHistory : views.grades;
+    this.props.setView(newView);
+  }
+
   get toggleViewMessage() {
     return this.props.activeView === views.grades
       ? messages.toActivityLog
@@ -27,11 +32,6 @@ export class GradebookHeader extends React.Component {
   lmsInstructorDashboardUrl = courseId => (
     `${getConfig().LMS_BASE_URL}/courses/${courseId}/instructor`
   );
-
-  handleToggleViewClick() {
-    const newView = this.props.activeView === views.grades ? views.bulkManagementHistory : views.grades;
-    this.props.setView(newView);
-  }
 
   render() {
     return (
@@ -48,7 +48,7 @@ export class GradebookHeader extends React.Component {
         </h1>
         <div className="subtitle-row d-flex justify-content-between align-items-center">
           <h3>{this.props.courseId}</h3>
-          { this.props.showBulkManagement && (
+          {this.props.showBulkManagement && (
             <Button
               variant="tertiary"
               onClick={this.handleToggleViewClick}
@@ -59,9 +59,9 @@ export class GradebookHeader extends React.Component {
         </div>
         {this.props.areGradesFrozen
           && (
-          <div className="alert alert-warning" role="alert">
-            <FormattedMessage {...messages.frozenWarning} />
-          </div>
+            <div className="alert alert-warning" role="alert">
+              <FormattedMessage {...messages.frozenWarning} />
+            </div>
           )}
         {(this.props.canUserViewGradebook === false) && (
           <div className="alert alert-warning" role="alert">
