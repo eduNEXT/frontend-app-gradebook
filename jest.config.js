@@ -10,4 +10,8 @@ module.exports = createConfig('jest', {
     'src/postcss.config.js',
     'testUtils', // don't unit test jest mocking tools
   ],
+  // see https://github.com/axios/axios/issues/5026
+  moduleNameMapper: {
+    '^axios$': 'axios/dist/axios.js',
+  },
 });
